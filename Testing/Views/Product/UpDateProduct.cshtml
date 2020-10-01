@@ -1,5 +1,5 @@
 ﻿@model Product
-<h2>Update @Model.Name</h2>
+<h2 class="text-white">Update @Model.Name</h2>
 @using (Html.BeginForm("UpdateProductToDatabase", "Product", "Post"))
 {
     <input asp-for="ProductID" type="hidden" value="@Model.ProductID" />
