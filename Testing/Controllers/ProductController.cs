@@ -71,5 +71,12 @@ namespace Testing.Controllers
 
         }
 
+        public IActionResult Search(string searchString)
+        {
+            var search = repo.SearchProduct(searchString);
+
+            return View(search);
+        }
+
         }
 }

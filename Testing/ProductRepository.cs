@@ -62,6 +62,12 @@ namespace Testing
             _conn.Execute("DELETE FROM Products WHERE ProductID = @id;",
             new { id = product.ProductID });
         }
+
+        public IEnumerable<Product> SearchProduct(string newname)
+        {
+            return _conn.Query<Product>("SELECT * FROM products WHERE NAME LIKE @name;",
+                new { name = "%" + newname + "%" });
+        }
     }
 
 }
